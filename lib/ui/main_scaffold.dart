@@ -34,12 +34,12 @@ class _MainScaffoldState extends State<MainScaffold> {
       icon: Icon(
         outlined,
         color: Colors.white.withOpacity(0.9),
-        size: 28,
+        size: 24,
       ),
       selectedIcon: Icon(
         filled,
         color: const Color(0xFF1565C0),   // kräftiges Dunkelblau
-        size: 30,
+        size: 24,
       ),
       label: label,
     );
@@ -68,7 +68,7 @@ class _MainScaffoldState extends State<MainScaffold> {
           indicatorColor: Colors.transparent,
           surfaceTintColor: Colors.transparent,
           elevation: 0,
-          height: 76,
+          height: 70,
           selectedIndex: _selectedIndex,
           onDestinationSelected: _onItemTapped,
           animationDuration: const Duration(milliseconds: 400),
@@ -81,8 +81,8 @@ class _MainScaffoldState extends State<MainScaffold> {
             TextStyle(
               color: Colors.white,           // immer weiß
               fontSize: 11,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 0.5,
+              fontWeight: FontWeight.w400,
+              letterSpacing: 0.4,
             ),
           ),
           
