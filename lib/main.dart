@@ -22,7 +22,8 @@ class HanseFitApp extends StatelessWidget {
       title: 'Hanse Fit',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        platform: TargetPlatform.android,
+        //colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
       home: MainScaffold(), // ← unser Wrapper mit Bottom-Bar

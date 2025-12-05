@@ -56,44 +56,46 @@ class _MainScaffoldState extends State<MainScaffold> {
           children: _pages,
         ),
       ),
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          color: Color(0xFF121212),
-          boxShadow: [
-            BoxShadow(color: Colors.black26, blurRadius: 20, offset: Offset(0, -4)),
-          ],
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Color(0xFF121212),
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.white,
+        selectedFontSize: 11,
+        unselectedFontSize: 11,
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        elevation: 20,
+        selectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w400,
+          letterSpacing: 0.4,
         ),
-        child: NavigationBar(
-          backgroundColor: Colors.transparent,
-          indicatorColor: Colors.transparent,
-          surfaceTintColor: Colors.transparent,
-          elevation: 0,
-          height: 70,
-          selectedIndex: _selectedIndex,
-          onDestinationSelected: _onItemTapped,
-          animationDuration: const Duration(milliseconds: 400),
-          
-          // WICHTIG: Labels immer anzeigen + immer weiß
-          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-          
-          // Schriftfarbe dauerhaft weiß (für aktive und inaktive Labels)
-          labelTextStyle: const WidgetStatePropertyAll(
-            TextStyle(
-              color: Colors.white,           // immer weiß
-              fontSize: 11,
-              fontWeight: FontWeight.w400,
-              letterSpacing: 0.4,
-            ),
+        unselectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w400,
+          letterSpacing: 0.4,
+        ),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.location_on),
+            label: "STUDIOS",
           ),
-          
-          destinations: [
-            _buildNavItem(Icons.location_on, Icons.location_on, "STUDIOS", 0),
-            _buildNavItem(Icons.calendar_today_outlined, Icons.calendar_today_outlined, "KURSE", 1),
-            _buildNavItem(Icons.qr_code_scanner_rounded, Icons.qr_code_scanner_rounded, "CHECK-IN", 2),
-            _buildNavItem(Icons.add_circle_outline, Icons.add_circle_outline, "ONLINE+", 3),
-            _buildNavItem(Icons.account_circle_outlined, Icons.account_circle_outlined, "PROFIL", 4),
-          ],
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today_outlined),
+            label: "KURSE",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.qr_code_scanner_rounded),
+            label: "CHECK-IN",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_circle_outline),
+            label: "ONLINE+",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_outlined),
+            label: "PROFIL",
+          ),
+        ],
       ),
     );
   }
