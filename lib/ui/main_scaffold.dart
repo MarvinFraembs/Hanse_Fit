@@ -1,5 +1,11 @@
 // lib/ui/main_scaffold.dart
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'pages/studios_page.dart';
+import 'pages/kurse_page.dart';
+import 'pages/checkin_page.dart';
+import 'pages/onlineplus_page.dart';
+import 'pages/profil_page.dart';
 
 class MainScaffold extends StatefulWidget {
   const MainScaffold({super.key});
@@ -11,12 +17,12 @@ class MainScaffold extends StatefulWidget {
 class _MainScaffoldState extends State<MainScaffold> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _pages = <Widget>[
-    Center(child: Text('STUDIOS', style: TextStyle(fontSize: 40))),
-    Center(child: Text('KURSE', style: TextStyle(fontSize: 40))),
-    Center(child: Text('CHECK-IN', style: TextStyle(fontSize: 40))),
-    Center(child: Text('ONLINE+', style: TextStyle(fontSize: 40))),
-    Center(child: Text('PROFIL', style: TextStyle(fontSize: 40))),
+  final List<Widget> _pages = <Widget>[
+    const KursePage(),
+    const StudiosPage(),
+    const CheckinPage(),
+    const OnlineplusPage(),
+    const ProfilPage(),
   ];
 
   void _onItemTapped(int index) {
