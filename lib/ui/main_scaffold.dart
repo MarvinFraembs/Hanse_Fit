@@ -18,8 +18,8 @@ class _MainScaffoldState extends State<MainScaffold> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = <Widget>[
-    const KursePage(),
     const StudiosPage(),
+    const KursePage(),
     const CheckinPage(),
     const OnlineplusPage(),
     const ProfilPage(),
@@ -64,11 +64,11 @@ class _MainScaffoldState extends State<MainScaffold> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Color(0xFF121212),
+        backgroundColor:  Color.fromARGB(255, 29, 29, 29),
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.white,
-        selectedFontSize: 11,
-        unselectedFontSize: 11,
+        selectedFontSize: 10,
+        unselectedFontSize: 10,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         elevation: 20,
