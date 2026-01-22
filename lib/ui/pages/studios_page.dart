@@ -11,7 +11,7 @@ class StudiosPage extends StatelessWidget {
         backgroundColor: const Color(0xFF121212),
       ),
       body: const Center(
-        child: Text('STUDIOS', style: TextStyle(fontSize: 40)),
+        child: Text('Studios', style: TextStyle(fontSize: 40)),
       ),
     );
   }

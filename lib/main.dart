@@ -6,8 +6,8 @@ import 'package:hanse_fit_app/ui/main_scaffold.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   // Nur für Desktop → kleines Handy-Fenster
-  setWindowMinSize(const Size(390, 844));
-  setWindowMaxSize(const Size(390, 844));
+  setWindowMinSize(const Size(420, 844));
+  setWindowMaxSize(const Size(420, 844));
   setWindowTitle("Hanse Fit");
 
   runApp(const HanseFitApp());
