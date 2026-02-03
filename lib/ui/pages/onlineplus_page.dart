@@ -75,41 +75,153 @@ class OnlineplusPage extends StatelessWidget {
               ),
             ),
 
+            const SizedBox(height:12),
+
             // Dunkelgrünes Widget
             Container(
-              height: 300,
+              height: 190,
               margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+              padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color(0xFF1B4332), // Sehr dunkles Grün
+                color: const Color.fromARGB(255, 27, 77, 68),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: const Center(
-                child: Text(
-                  'Grüner Bereich',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset(
+                        '/home/marvin/Code/Hanse-Fit/hanse_fit_app/assets/images/Icon_Yazio.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      const SizedBox(width: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 6), // Passt die Zahl an für mehr/weniger Abstand
+                        child: Text(
+                          'Yazio',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      const Spacer(),
+                      Icon(
+                        Icons.info_outline,
+                        size: 22,
+                        color: Colors.white,
+                      ),
+                    ],
                   ),
-                ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Gesunde Gewohnheiten, die bleiben - mit Yazio Pro an deiner Seite.',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: const Color.fromARGB(255, 246, 245, 245),
+                    ),
+                  ),
+                  const SizedBox(height: 18),
+                  OutlinedButton(
+                    onPressed: () {
+                      // Aktion zum Gutscheincode
+                    },
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: Colors.white, width: 2),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'ZUM GUTSCHEINCODE',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
 
             // Dunkelblaues Widget
             Container(
-              height: 300,
+              height: 220,
               margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+              padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color(0xFF0D1B2A), // Dunkles Blau
+                color: const Color.fromARGB(255, 28, 38, 52),
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: const Center(
-                child: Text(
-                  'Blauer Bereich',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset(
+                        '/home/marvin/Code/Hanse-Fit/hanse_fit_app/assets/images/Icon_7Schlaefer.png',
+                        width: 40,
+                        height: 40,
+                      ),
+                      const SizedBox(width: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 6), // Passt die Zahl an für mehr/weniger Abstand
+                        child: Text(
+                          '7Schläfer',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      const Spacer(),
+                      Icon(
+                        Icons.info_outline,
+                        size: 22,
+                        color: Colors.white,
+                      ),
+                    ],
                   ),
-                ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Besser ein-, aus- und durchschlafen: Die 7Schläfer-App ermöglicht dir eine schnelle und wirksame Verbesserung deines Schlafs',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: const Color.fromARGB(255, 246, 245, 245),
+                    ),
+                  ),
+                  const SizedBox(height: 18),
+                  OutlinedButton(
+                    onPressed: () {
+                      // Aktion zum Gutscheincode
+                    },
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: Colors.white, width: 2),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'ZUM GUTSCHEINCODE',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
 
