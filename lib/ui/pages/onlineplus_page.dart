@@ -93,7 +93,7 @@ class OnlineplusPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.asset(
-                        '/home/marvin/Code/Hanse-Fit/hanse_fit_app/assets/images/Icon_Yazio.png',
+                        'assets/images/Icon_Yazio.png',
                         width: 40,
                         height: 40,
                       ),
@@ -167,7 +167,7 @@ class OnlineplusPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Image.asset(
-                        '/home/marvin/Code/Hanse-Fit/hanse_fit_app/assets/images/Icon_7Schlaefer.png',
+                        'assets/images/Icon_7Schlaefer.png',
                         width: 40,
                         height: 40,
                       ),
