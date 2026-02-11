@@ -1,11 +1,15 @@
 // lib/main.dart
 import 'package:flutter/material.dart';
-import 'package:window_size/window_size.dart'; // optional für feste Handy-Größe
-import 'package:hanse_fit_app/ui/main_scaffold.dart';
+import 'package:window_size/window_size.dart'; // nur für Desktop → optionale Handy-Größe
 
-void main() {
+// Deine Screens importieren
+import 'package:hanse_fit_app/ui/main_scaffold.dart';
+import 'package:hanse_fit_app/screens/splash_screen.dart'; // ← neuen Splash-Screen importieren
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Nur für Desktop → kleines Handy-Fenster
+
+  // Nur für Desktop: simuliert Handy-Größe (optional – kannst du später entfernen)
   setWindowMinSize(const Size(420, 844));
   setWindowMaxSize(const Size(420, 844));
   setWindowTitle("Hanse Fit");
@@ -22,11 +26,15 @@ class HanseFitApp extends StatelessWidget {
       title: 'Hanse Fit',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        platform: TargetPlatform.android,
-        //colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
+        // platform: TargetPlatform.android,  // ← meist nicht nötig → entfernen oder nur bei Bedarf
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF1976D2), // z. B. ein Blau-Ton – passe an dein Branding an
+          brightness: Brightness.light,       // oder .dark
+        ),
+        // scaffoldBackgroundColor: Colors.white, // optional
       ),
-      home: MainScaffold(), // ← unser Wrapper mit Bottom-Bar
+      home: const SplashScreen(), // ← Start mit dem Lade-/Splash-Screen
     );
   }
 }

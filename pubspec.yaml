@@ -17,9 +17,22 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  flutter_native_splash: ^2.4.7
+  flutter_launcher_icons: ^0.14.4
 
 flutter:
   uses-material-design: true
 
   assets:
     - assets/images/
+
+flutter_native_splash:
+  color: "#ffffff"                  # oder z. B. #0D47A1 für dunkelblau
+  color_dark: "#0a0a0a"
+  image: assets/images/logo.png
+  android: true
+  ios: true
+  android_12:
+    image: assets/images/logo.png
+    icon_background_color: "#ffffff"   # wichtig für Android 12+
+  

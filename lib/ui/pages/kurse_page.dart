@@ -265,7 +265,7 @@ class _KursePageState extends State<KursePage> {
                   padding: EdgeInsets.symmetric(vertical: 32, horizontal: 16),
                   child: Center(
                     child: Text(
-                      'Ende der aktuellen Liste',
+                      'Fehler beim Laden',
                       style: TextStyle(color: Colors.white38, fontSize: 13),
                     ),
                   ),
