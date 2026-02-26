@@ -4,6 +4,7 @@ import 'package:window_size/window_size.dart'; // nur für Desktop → optionale
 
 // Deine Screens importieren
 import 'package:hanse_fit_app/ui/main_scaffold.dart';
+import 'package:hanse_fit_app/screens/intro_screen.dart';
 import 'package:hanse_fit_app/screens/splash_screen.dart'; // ← neuen Splash-Screen importieren
 
 void main() async {
@@ -25,8 +26,10 @@ class HanseFitApp extends StatelessWidget {
     return MaterialApp(
       title: 'Hanse Fit',
       debugShowCheckedModeBanner: false,
+      color: Colors.black,
       theme: ThemeData(
         useMaterial3: true,
+        scaffoldBackgroundColor: Colors.black,
         // platform: TargetPlatform.android,  // ← meist nicht nötig → entfernen oder nur bei Bedarf
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF1976D2), // z. B. ein Blau-Ton – passe an dein Branding an
@@ -34,7 +37,7 @@ class HanseFitApp extends StatelessWidget {
         ),
         // scaffoldBackgroundColor: Colors.white, // optional
       ),
-      home: const SplashScreen(), // ← Start mit dem Lade-/Splash-Screen
+      home: const IntroScreen(), // ← Start mit dem Lade-/Splash-Screen
     );
   }
 }
