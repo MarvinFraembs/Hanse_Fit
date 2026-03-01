@@ -1,7 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:hanse_fit_app/services/app_preferences.dart';
 
-class ProfilPage extends StatelessWidget {
+class ProfilPage extends StatefulWidget {
   const ProfilPage({super.key});
+
+  @override
+  State<ProfilPage> createState() => _ProfilPageState();
+}
+
+class _ProfilPageState extends State<ProfilPage> {
+  String _username = '';
+  String _mitgliedsId = '';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadData();
+  }
+
+  Future<void> _loadData() async {
+    final name = await AppPreferences.getName();
+    final mitgliedsId = await AppPreferences.getMitgliedsId();
+    setState(() {
+      _username = name;
+      _mitgliedsId = mitgliedsId;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,8 +101,8 @@ class ProfilPage extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Text(
-                                  'Max Mustermann',
+                                Text(
+                                  _username,
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 19,
