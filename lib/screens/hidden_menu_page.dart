@@ -11,7 +11,7 @@ class HiddenMenuPage extends StatefulWidget {
 class _HiddenMenuPageState extends State<HiddenMenuPage> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _mitgliedsIdController = TextEditingController();
-  final TextEditingController _aktivitaetController = TextEditingController();
+  final TextEditingController _unternehmenController = TextEditingController();
 
   @override
   void initState() {
@@ -24,7 +24,7 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
     setState(() {
       _nameController.text = prefs.getString('name') ?? '';
       _mitgliedsIdController.text = prefs.getString('mitgliedsId') ?? '';
-      _aktivitaetController.text = prefs.getString('aktivitaet') ?? '';
+      _unternehmenController.text = prefs.getString('arbeitgeber') ?? '';
     });
   }
 
@@ -32,14 +32,14 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('name', _nameController.text);
     await prefs.setString('mitgliedsId', _mitgliedsIdController.text);
-    await prefs.setString('aktivitaet', _aktivitaetController.text);
+    await prefs.setString('arbeitgeber', _unternehmenController.text);
   }
 
   @override
   void dispose() {
     _nameController.dispose();
     _mitgliedsIdController.dispose();
-    _aktivitaetController.dispose();
+    _unternehmenController.dispose();
     super.dispose();
   }
 
@@ -73,10 +73,10 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
             ),
             const SizedBox(height: 16),
             TextField(
-              controller: _aktivitaetController,
+              controller: _unternehmenController,
               style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
-                labelText: 'Aktivität',
+                labelText: 'Arbeitgeber',
                 labelStyle: TextStyle(color: Colors.white),
                 border: OutlineInputBorder(),
               ),

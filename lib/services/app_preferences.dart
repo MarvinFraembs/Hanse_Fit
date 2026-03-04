@@ -11,8 +11,8 @@ class AppPreferences {
     return prefs.getString('mitgliedsId') ?? '';
   }
 
-  static Future<String> getAktivitaet() async {
+  static Future<String> getArbeitgeber() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getString('aktivitaet') ?? '';
+    return prefs.getString('arbeitgeber') ?? '';
   }
 }

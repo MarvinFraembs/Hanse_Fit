@@ -11,6 +11,7 @@ class ProfilPage extends StatefulWidget {
 class _ProfilPageState extends State<ProfilPage> {
   String _username = '';
   String _mitgliedsId = '';
+  String _arbeitgeber = '';
 
   @override
   void initState() {
@@ -21,9 +22,11 @@ class _ProfilPageState extends State<ProfilPage> {
   Future<void> _loadData() async {
     final name = await AppPreferences.getName();
     final mitgliedsId = await AppPreferences.getMitgliedsId();
+    final arbeitgeber = await AppPreferences.getArbeitgeber();
     setState(() {
       _username = name;
       _mitgliedsId = mitgliedsId;
+      _arbeitgeber = arbeitgeber;
     });
   }
 
@@ -110,8 +113,8 @@ class _ProfilPageState extends State<ProfilPage> {
                                   ),
                                 ),
                                 const SizedBox(height: 7),
-                                const Text(
-                                  'Mustermann Studios GmbH',
+                                Text(
+                                  _arbeitgeber,
                                   style: TextStyle(
                                     color: Colors.white70,
                                     fontSize: 15,
@@ -174,7 +177,7 @@ class _ProfilPageState extends State<ProfilPage> {
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Text(
                             'Mitglieds-ID:',
                             style: TextStyle(
@@ -185,7 +188,7 @@ class _ProfilPageState extends State<ProfilPage> {
                           ),
                           SizedBox(width: 5),
                           Text(
-                            '123456',
+                            _mitgliedsId,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
