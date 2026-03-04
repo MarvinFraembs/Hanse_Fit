@@ -15,4 +15,9 @@ class AppPreferences {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString('arbeitgeber') ?? '';
   }
+
+  static Future<String?> getProfileImagePath() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString('profileImagePath');
+  }
 }
