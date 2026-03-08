@@ -186,6 +186,7 @@ class _CheckinPageState extends State<CheckinPage> {
                 fontSize: 14,
                 fontWeight: FontWeight.w300,
                 height: 1.3,
+                letterSpacing: 0.6,
               ),
             ),
 
@@ -202,11 +203,18 @@ class _CheckinPageState extends State<CheckinPage> {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
+                  const Center(
+                    child: Icon(
+                      Icons.qr_code_2_sharp,           // oder Icons.flashlight_on (je nach Flutter-Version)
+                      size: 100,
+                      color: Color.fromARGB(57, 169, 168, 168),    
+                    ),
+                  ),
                   // Inhalt je nach Berechtigungsstatus
                   if (!_cameraPermissionGranted)
                     const Center(
                       child: Text(
-                        'Kamera-Zugriff\nerforderlich',
+                        '',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white70,
@@ -240,6 +248,20 @@ class _CheckinPageState extends State<CheckinPage> {
                       },
                     ),
 
+                  Positioned(
+                    top: 20,                    // Abstand von oben – passe nach Wunsch an (16–40)
+                    left: 0,
+                    right: 0,
+                    child: const Center(
+                      child: Icon(
+                        Icons.flashlight_off_rounded,         // oder Icons.flashlight_on
+                        size: 25,               // etwas kleiner, weil es oben liegt
+                        color: Colors.white,  // dezent / halbtransparent
+                        // shadows: [ ... ]     // optional: leichter Glow
+                      ),
+                    ),
+                  ),
+
                   // Roter Rahmen in den Ecken – immer sichtbar
                   ...List.generate(4, (index) {
                     final alignments = [
@@ -253,21 +275,21 @@ class _CheckinPageState extends State<CheckinPage> {
                         child: Align(
                           alignment: alignments[index],
                           child: Container(
-                            width: 50,
-                            height: 50,
+                            width: 20,
+                            height: 20,
                             decoration: BoxDecoration(
                               border: Border(
                                 top: index < 2
-                                    ? const BorderSide(color: Colors.redAccent, width: 4)
+                                    ? const BorderSide(color: Color.fromARGB(255, 241, 123, 123), width: 2)
                                     : BorderSide.none,
                                 left: index == 0 || index == 2
-                                    ? const BorderSide(color: Colors.redAccent, width: 4)
+                                    ? const BorderSide(color:Color.fromARGB(255, 241, 123, 123), width: 2)
                                     : BorderSide.none,
                                 right: index == 1 || index == 3
-                                    ? const BorderSide(color: Colors.redAccent, width: 4)
+                                    ? const BorderSide(color:Color.fromARGB(255, 241, 123, 123), width: 2)
                                     : BorderSide.none,
                                 bottom: index >= 2
-                                    ? const BorderSide(color: Colors.redAccent, width: 4)
+                                    ? const BorderSide(color: Color.fromARGB(255, 241, 123, 123), width: 2)
                                     : BorderSide.none,
                               ),
                             ),
@@ -307,16 +329,16 @@ class _CheckinPageState extends State<CheckinPage> {
               style: TextStyle(
                 color: const Color.fromARGB(255, 52, 135, 229),
                 fontSize: 16,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w500,
                 letterSpacing: 0.8,
               ),
             ),
 
-            const SizedBox(height: 16),
+            const SizedBox(height: 18),
 
             // Button "Manueller Check-in beim Partner" – immer sichtbar
             SizedBox(
-              width: double.infinity,
+              width: 300,
               height: 56,
               child: ElevatedButton(
                 onPressed: () {
@@ -342,7 +364,7 @@ class _CheckinPageState extends State<CheckinPage> {
               ),
             ),
 
-            const SizedBox(height: 32),
+            const SizedBox(height: 11),
 
             // Info-Zeile mit Icon – immer sichtbar
             Row(
@@ -351,15 +373,16 @@ class _CheckinPageState extends State<CheckinPage> {
                 const Icon(
                   Icons.info_outline,
                   color: Color.fromARGB(255, 52, 135, 229),
-                  size: 24,
+                  size: 26,
                 ),
                 const SizedBox(width: 8),
                 const Text(
                   'Wie funktioniert der Check-in?',
                   style: TextStyle(
                     color: Color.fromARGB(255, 52, 135, 229),
-                    fontSize: 15,
+                    fontSize: 16,
                     fontWeight: FontWeight.w500,
+                    letterSpacing: 0.2,
                   ),
                 ),
               ],
