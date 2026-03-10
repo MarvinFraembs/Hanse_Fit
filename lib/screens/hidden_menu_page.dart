@@ -5,6 +5,13 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:path/path.dart' as path;
 
+const List<String> allowedStudios = [
+  'FITNESSLAND Braunschweig Rebenpark',
+  'FITNESSLAND Braunschweig Wilhelmstraße',
+  'FITNESSLAND Braunschweig Celler Straße',
+  'Hygia Braunschweig',
+];
+
 class HiddenMenuPage extends StatefulWidget {
   const HiddenMenuPage({super.key});
 
@@ -16,6 +23,7 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
   final _nameController = TextEditingController();
   final _mitgliedsIdController = TextEditingController();
   final _unternehmenController = TextEditingController();
+  String? _selectedStudio;
 
   String? _profileImagePath;        // ← hier wird der Pfad gespeichert
   final ImagePicker _picker = ImagePicker();
@@ -33,6 +41,8 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
       _mitgliedsIdController.text = prefs.getString('mitgliedsId') ?? '';
       _unternehmenController.text = prefs.getString('arbeitgeber') ?? '';
       _profileImagePath = prefs.getString('profileImagePath');
+      final savedStudio = prefs.getString('studio') ?? '';
+      _selectedStudio = allowedStudios.contains(savedStudio) ? savedStudio : null;
     });
   }
 
@@ -41,8 +51,14 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
     await prefs.setString('name', _nameController.text);
     await prefs.setString('mitgliedsId', _mitgliedsIdController.text);
     await prefs.setString('arbeitgeber', _unternehmenController.text);
+    //await prefs.setString('studio', _studioController.text);
     if (_profileImagePath != null) {
       await prefs.setString('profileImagePath', _profileImagePath!);
+    }
+    if (_selectedStudio != null) {
+    await prefs.setString('studio', _selectedStudio!);
+    } else {
+    await prefs.remove('studio');
     }
   }
 
@@ -166,6 +182,35 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
                 labelStyle: TextStyle(color: Colors.white),
                 border: OutlineInputBorder(),
               ),
+            ),
+            const SizedBox(height: 16),
+            DropdownButtonFormField<String>(
+              value: _selectedStudio,
+              style: const TextStyle(color: Colors.white),
+              dropdownColor: Colors.grey[900],
+              decoration: const InputDecoration(
+                labelText: 'Studio',
+                labelStyle: TextStyle(color: Colors.white),
+                border: OutlineInputBorder(),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white54),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white),
+                ),
+              ),
+              items: allowedStudios.map((String studio) {
+                return DropdownMenuItem<String>(
+                  value: studio,
+                  child: Text(studio),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                setState(() {
+                  _selectedStudio = newValue;
+                });
+              },
+              hint: const Text('Studio auswählen', style: TextStyle(color: Colors.grey)),
             ),
             const SizedBox(height: 32),
 

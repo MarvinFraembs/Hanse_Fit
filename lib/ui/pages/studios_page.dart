@@ -6,22 +6,15 @@ class StudiosPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Studios'),
-        backgroundColor: const Color(0xFF121212),
-      ),
       body: Stack(
         children: [
-          // Hintergrund-Bild – nimmt die gesamte Fläche ein
-          Positioned.fill(
-            child: Image.network(
-              'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-              fit: BoxFit.cover,
-              // Alternativ: Asset-Bild verwenden
-              // Image.asset('assets/images/gym_background.jpg', fit: BoxFit.cover),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.68,
+            child: Image.asset('assets/images/Studios_Page.png',
+              fit: BoxFit.fill,
+              width: double.infinity,
             ),
           ),
-
           // Optional: dunkler Overlay, damit der Text besser lesbar wird
           Positioned.fill(
             child: Container(
@@ -31,17 +24,17 @@ class StudiosPage extends StatelessWidget {
 
           // Das hochziehbare Menü unten
           DraggableScrollableSheet(
-            initialChildSize: 0.28, // Start-Höhe ≈ 28% → Bild ca. 72% sichtbar
-            minChildSize: 0.28,     // Kann nicht kleiner werden
+            initialChildSize: 0.29, // Start-Höhe ≈ 28% → Bild ca. 72% sichtbar
+            minChildSize: 0.29,     // Kann nicht kleiner werden
             maxChildSize: 0.92,     // Fast full-screen beim Hochziehen
             snap: true,             // Schöne Sprung-Animation zu den Größen
-            snapSizes: const [0.28, 0.60, 0.92],
+            snapSizes: const [0.29, 0.60, 0.92],
             builder: (BuildContext context, ScrollController scrollController) {
               return Container(
                 decoration: const BoxDecoration(
                   color: Color(0xFF1E1E1E),
                   borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(28),
+                    top: Radius.circular(20),
                   ),
                   boxShadow: [
                     BoxShadow(
@@ -59,11 +52,11 @@ class StudiosPage extends StatelessWidget {
                       // Drag-Handle (optisch schön)
                       Center(
                         child: Container(
-                          width: 42,
+                          width: 70,
                           height: 5,
-                          margin: const EdgeInsets.symmetric(vertical: 14),
+                          margin: const EdgeInsets.symmetric(vertical: 10),
                           decoration: BoxDecoration(
-                            color: Colors.grey[600],
+                            color: const Color.fromARGB(255, 207, 206, 206),
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
@@ -71,14 +64,23 @@ class StudiosPage extends StatelessWidget {
 
                       // Titel
                       const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 2),
                         child: Text(
                           'Studioliste anzeigen',
                           style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            fontSize: 14,
+                            //fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 198, 197, 197),
                           ),
+                        ),
+                      ),
+
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 2),
+                        child: Divider(
+                          color: Color.fromARGB(255, 83, 82, 82),
+                          thickness: 1.2,
+                          height: 1,
                         ),
                       ),
 
@@ -88,7 +90,7 @@ class StudiosPage extends StatelessWidget {
                         child: Text(
                           'Bis zu 1 km',
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 12,
                             color: Colors.grey[400],
                           ),
                         ),
@@ -109,10 +111,8 @@ class StudiosPage extends StatelessWidget {
                                 color: Colors.deepPurple.withOpacity(0.25),
                                 borderRadius: BorderRadius.circular(12),
                               ),
-                              child: const Icon(
-                                Icons.fitness_center,
-                                color: Colors.deepPurple,
-                                size: 28,
+                              child: Image.asset( 'assets/images/Icon_Gym.png',
+                                fit: BoxFit.contain,
                               ),
                             ),
                             const SizedBox(width: 16),
