@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hanse_fit_app/services/app_preferences.dart';
 
@@ -12,6 +13,7 @@ class _ProfilPageState extends State<ProfilPage> {
   String _username = '';
   String _mitgliedsId = '';
   String _arbeitgeber = '';
+  String? _profileImagePath;
 
   @override
   void initState() {
@@ -23,12 +25,25 @@ class _ProfilPageState extends State<ProfilPage> {
     final name = await AppPreferences.getName();
     final mitgliedsId = await AppPreferences.getMitgliedsId();
     final arbeitgeber = await AppPreferences.getArbeitgeber();
+    final imagePath = await AppPreferences.getProfileImagePath();
+
+    if (!mounted) return;
+
     setState(() {
       _username = name;
       _mitgliedsId = mitgliedsId;
       _arbeitgeber = arbeitgeber;
+      _profileImagePath = imagePath;
     });
   }
+
+Widget _defaultAvatar() {
+  return const CircleAvatar(
+    radius: 45,
+    backgroundColor: Colors.grey,
+    child: Icon(Icons.person, size: 40, color: Colors.white70),
+  );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -92,11 +107,26 @@ class _ProfilPageState extends State<ProfilPage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           // Rundes Profilbild
-                          const CircleAvatar(
-                            radius: 45,
-                            backgroundColor: Colors.grey,
-                            backgroundImage: null,
-                            child: Icon(Icons.person, size: 40, color: Colors.white70),
+                          Container(
+                            width: 90,
+                            height: 90,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(color: Colors.white24, width: 1.5),
+                            ),
+                            child: ClipOval(
+                              child: _profileImagePath != null &&
+                                      File(_profileImagePath!).existsSync()
+                                  ? Image.file(
+                                      File(_profileImagePath!),
+                                      fit: BoxFit.cover,
+                                      width: 90,
+                                      height: 90,
+                                      errorBuilder: (context, error, stackTrace) =>
+                                          _defaultAvatar(),
+                                    )
+                                  : _defaultAvatar(),
+                            ),
                           ),
                           const SizedBox(width: 16),
                           // Rechte Seite: Name, Unternehmen, Status-Chips
@@ -141,7 +171,7 @@ class _ProfilPageState extends State<ProfilPage> {
                                     ),
                                     const SizedBox(width: 8),
                                     Container(
-                                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 1),
+                                      padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 1),
                                       decoration: BoxDecoration(
                                         color: Colors.transparent,
                                         border: Border.all(
@@ -150,14 +180,33 @@ class _ProfilPageState extends State<ProfilPage> {
                                         ),
                                         borderRadius: BorderRadius.circular(999),
                                       ),
-                                      child: const Text(
-                                        'Best',
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
+                                      child: Row(
+                                        // mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Container(
+                                            //padding: const EdgeInsets.all(0),
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              color: Colors.transparent,
+                                            ),
+                                            child: Image.asset(
+                                              'assets/images/Icon_Hanse_Fit.png',
+                                              width: 20,
+                                              height: 20,
+                                            ),
+                                          ),
+                                          const SizedBox(width: 1),
+                                          Text(
+                                            'Best',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          const SizedBox(width: 5),
+                                        ],
+                                      ) 
                                     ),
                                   ],
                                 ),
