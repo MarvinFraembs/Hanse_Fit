@@ -195,7 +195,7 @@ class _CheckinPageState extends State<CheckinPage> {
             // Kamera-Container mit rotem Eck-Rahmen – immer sichtbar
             Container(
               width: 400,
-              height: 320,
+              height: 400,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 30, 30, 30),
                 borderRadius: BorderRadius.circular(16),
@@ -203,13 +203,27 @@ class _CheckinPageState extends State<CheckinPage> {
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  const Center(
-                    child: Icon(
-                      Icons.qr_code_2_sharp,           // oder Icons.flashlight_on (je nach Flutter-Version)
-                      size: 100,
-                      color: Color.fromARGB(57, 169, 168, 168),    
+                  Center(
+                    child: Container(
+                      padding: const EdgeInsets.all(34.0),           // ← steuert die Rahmenstärke (hier 8 px Abstand = Rahmen)
+                      decoration: ShapeDecoration(
+                        shape: CircleBorder(
+                          side: BorderSide(
+                            color: Color.fromARGB(57, 169, 168, 168),
+                            width: 4,                               // oder hier die Stärke setzen
+                          ),
+                        ),
+                        // color: Colors.transparent,               // nicht nötig – ShapeDecoration hat standardmäßig keinen Fill
+                      ),
+                      child: Image.asset(
+                        'assets/images/Icon_QR_Code.png',
+                        color: Color.fromARGB(57, 169, 168, 168),
+                        width: 80,
+                        height: 80,
+                      ),
                     ),
                   ),
+                  
                   // Inhalt je nach Berechtigungsstatus
                   if (!_cameraPermissionGranted)
                     const Center(
