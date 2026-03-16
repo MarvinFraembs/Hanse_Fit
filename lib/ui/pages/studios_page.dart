@@ -10,7 +10,7 @@ class StudiosPage extends StatelessWidget {
         children: [
           Container(
             height: MediaQuery.of(context).size.height * 0.68,
-            child: Image.asset('assets/images/Studios_Page.png',
+            child: Image.asset('assets/images/Studios_Map2.png',
               fit: BoxFit.fill,
               width: double.infinity,
             ),
