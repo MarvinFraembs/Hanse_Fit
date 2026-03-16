@@ -13,6 +13,9 @@ class StudiosPage extends StatelessWidget {
             child: Image.asset('assets/images/Studios_Map2.png',
               fit: BoxFit.fill,
               width: double.infinity,
+              // fit: BoxFit.cover, // oder was du brauchst
+              // color: Colors.white.withOpacity(0.4),     // je höher, desto heller
+              // colorBlendMode: BlendMode.lighten,
             ),
           ),
           // Optional: dunkler Overlay, damit der Text besser lesbar wird
@@ -22,17 +25,53 @@ class StudiosPage extends StatelessWidget {
             ),
           ),
 
+          Positioned(
+            top: 60.5,                    // Abstand von oben (anpassen!)
+            left: 11.5,
+            right: 65,
+            child: Container(
+              height: 40,
+              
+              child: SearchBar(           // ← Material 3 SearchBar (sehr empfehlenswert seit 2024/25)
+                hintText: 'Partner finden',
+                leading: Padding(padding:  const EdgeInsets.only(right: 4),
+                child: Icon(Icons.search, color: Color.fromARGB(255, 195, 194, 194),),
+                ),
+                elevation: const MaterialStatePropertyAll(2),
+                textStyle: MaterialStateProperty.all(
+                  const TextStyle(color: Color.fromARGB(255, 195, 194, 194), fontWeight: FontWeight.w500),
+                ),
+                backgroundColor: MaterialStatePropertyAll(
+                  const Color.fromARGB(255, 22, 22, 22).withOpacity(0.99),
+                ),
+                shape: MaterialStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+                padding: const MaterialStatePropertyAll(
+                  EdgeInsets.symmetric(horizontal: 7, vertical: 0), // horizontal = Innenabstand links/rechts
+                ),
+                onChanged: (value) {
+                  // Hier deine Such-Logik
+                  print('Suche: $value');
+                },
+                // Optional: onTap → öffnet volle Suche / Seite
+              ),
+            ),
+          ),
+
           // Das hochziehbare Menü unten
           DraggableScrollableSheet(
-            initialChildSize: 0.29, // Start-Höhe ≈ 28% → Bild ca. 72% sichtbar
-            minChildSize: 0.29,     // Kann nicht kleiner werden
+            initialChildSize: 0.3, // Start-Höhe ≈ 28% → Bild ca. 72% sichtbar
+            minChildSize: 0.3,     // Kann nicht kleiner werden
             maxChildSize: 0.92,     // Fast full-screen beim Hochziehen
             snap: true,             // Schöne Sprung-Animation zu den Größen
-            snapSizes: const [0.29, 0.60, 0.92],
+            snapSizes: const [0.3, 0.60, 0.92],
             builder: (BuildContext context, ScrollController scrollController) {
               return Container(
                 decoration: const BoxDecoration(
-                  color: Color(0xFF1E1E1E),
+                  color: Color.fromARGB(255, 22, 22, 22),
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(20),
                   ),

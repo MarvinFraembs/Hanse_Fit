@@ -202,28 +202,7 @@ class _CheckinPageState extends State<CheckinPage> {
               ),
               child: Stack(
                 fit: StackFit.expand,
-                children: [
-                  Center(
-                    child: Container(
-                      padding: const EdgeInsets.all(34.0),           // ← steuert die Rahmenstärke (hier 8 px Abstand = Rahmen)
-                      decoration: ShapeDecoration(
-                        shape: CircleBorder(
-                          side: BorderSide(
-                            color: Color.fromARGB(57, 169, 168, 168),
-                            width: 4,                               // oder hier die Stärke setzen
-                          ),
-                        ),
-                        // color: Colors.transparent,               // nicht nötig – ShapeDecoration hat standardmäßig keinen Fill
-                      ),
-                      child: Image.asset(
-                        'assets/images/Icon_QR_Code.png',
-                        color: Color.fromARGB(57, 169, 168, 168),
-                        width: 80,
-                        height: 80,
-                      ),
-                    ),
-                  ),
-                  
+                children: [                  
                   // Inhalt je nach Berechtigungsstatus
                   if (!_cameraPermissionGranted)
                     const Center(
@@ -261,6 +240,27 @@ class _CheckinPageState extends State<CheckinPage> {
                         );
                       },
                     ),
+
+                  Center(
+                    child: Container(
+                      padding: const EdgeInsets.all(34.0),           // ← steuert die Rahmenstärke (hier 8 px Abstand = Rahmen)
+                      decoration: ShapeDecoration(
+                        shape: CircleBorder(
+                          side: BorderSide(
+                            color: Color.fromARGB(57, 169, 168, 168),
+                            width: 4,                               // oder hier die Stärke setzen
+                          ),
+                        ),
+                        // color: Colors.transparent,               // nicht nötig – ShapeDecoration hat standardmäßig keinen Fill
+                      ),
+                      child: Image.asset(
+                        'assets/images/Icon_QR_Code.png',
+                        color: Color.fromARGB(57, 169, 168, 168),
+                        width: 80,
+                        height: 80,
+                      ),
+                    ),
+                  ),
 
                   Positioned(
                     top: 20,                    // Abstand von oben – passe nach Wunsch an (16–40)
