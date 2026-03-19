@@ -221,7 +221,7 @@ Widget _defaultAvatar() {
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(vertical: 6),
                       decoration: const BoxDecoration(
-                        color: Colors.blue,
+                        color: Color.fromARGB(255, 88, 137, 255),
                         borderRadius: BorderRadius.vertical(bottom: Radius.circular(8)),
                       ),
                       child: Row(
@@ -305,7 +305,7 @@ class _CheckInsBuchungenSectionState extends State<CheckInsBuchungenSection> {
                       decoration: BoxDecoration(
                         border: Border(
                           bottom: BorderSide(
-                            color: showCheckIns ? Color.fromARGB(255, 52, 135, 229) : Colors.transparent,
+                            color: showCheckIns ? Color.fromARGB(255, 88, 137, 255) : Colors.transparent,
                             width: 3,
                           ),
                         ),
@@ -314,7 +314,7 @@ class _CheckInsBuchungenSectionState extends State<CheckInsBuchungenSection> {
                         'CHECK-INS',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: showCheckIns ? Color.fromARGB(255, 52, 135, 229) : Colors.white,
+                          color: showCheckIns ? Color.fromARGB(255, 88, 137, 255) : Colors.white,
                           fontWeight: FontWeight.normal,
                           fontSize: 16,
                         ),
@@ -343,7 +343,7 @@ class _CheckInsBuchungenSectionState extends State<CheckInsBuchungenSection> {
                         'BUCHUNGEN',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: !showCheckIns ? Color.fromARGB(255, 52, 135, 229) : Colors.white,
+                          color: !showCheckIns ? Color.fromARGB(255, 88, 137, 255) : Colors.white,
                           fontWeight: FontWeight.normal,
                           fontSize: 14,
                         ),
@@ -406,7 +406,7 @@ class _CheckInsBuchungenSectionState extends State<CheckInsBuchungenSection> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100), // ← Halbe Breite/Höhe für perfekten Kreis
                             border: Border.all(
-                              color:Color.fromARGB(255, 52, 135, 229), // Farbe der Umrandung
+                              color:Color.fromARGB(255, 88, 137, 255), // Farbe der Umrandung
                               width: 1.0, // Dicke der Linie
                             ),
                           ),
@@ -414,7 +414,7 @@ class _CheckInsBuchungenSectionState extends State<CheckInsBuchungenSection> {
                             child: Text(
                               '1',
                               style: TextStyle(
-                                color:Color.fromARGB(255, 52, 135, 229),
+                                color:Color.fromARGB(255, 88, 137, 255),
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -478,9 +478,9 @@ class _CheckInsBuchungenSectionState extends State<CheckInsBuchungenSection> {
                               height: 32,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: isToday ? Color.fromARGB(255, 52, 135, 229) : Colors.transparent,
+                                color: isToday ? Color.fromARGB(255, 88, 137, 255) : Colors.transparent,
                                 border: Border.all(
-                                  color: isToday ? Color.fromARGB(255, 52, 135, 229) : Colors.transparent,
+                                  color: isToday ? Color.fromARGB(255, 88, 137, 255) : Colors.transparent,
                                   width: 1,
                                 ),
                               ),
@@ -506,7 +506,7 @@ class _CheckInsBuchungenSectionState extends State<CheckInsBuchungenSection> {
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       border: Border.all(
-                        color: Color.fromARGB(255, 52, 135, 229),
+                        color: Color.fromARGB(255, 88, 137, 255),
                         width: 2,
                       ),
                       borderRadius: BorderRadius.circular(12),
@@ -515,7 +515,7 @@ class _CheckInsBuchungenSectionState extends State<CheckInsBuchungenSection> {
                       child: Text(
                         'ALLE CHECK-INS ANSEHEN',
                         style: TextStyle(
-                          color: Color.fromARGB(255, 52, 135, 229),
+                          color: Color.fromARGB(255, 88, 137, 255),
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
                         ),

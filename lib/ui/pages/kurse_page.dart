@@ -131,11 +131,11 @@ class _KursePageState extends State<KursePage> {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: isToday
-                                    ? const Color.fromARGB(255, 89, 154, 228)
+                                    ? const Color.fromARGB(255, 88, 137, 255)
                                     : Colors.transparent,
                                 border: Border.all(
                                   color: isToday
-                                      ? const Color.fromARGB(255, 89, 154, 228)
+                                      ? const Color.fromARGB(255, 88, 137, 255)
                                       : Colors.transparent,
                                 ),
                               ),
@@ -193,7 +193,7 @@ class _KursePageState extends State<KursePage> {
                 category: "Yoga",
                 icon: Icons.self_improvement_rounded,
                 title: "SOMATIC MEDITATION FOR STRESS RELIEVE (AUF ENGLISCH)",
-                location: 'LiVeri - Yoga and More by Verena Aufderheide Dor...',
+                location: 'LiVeri - Yoga and More by Verena Aufderheide...',
               ),
 
               const SizedBox(height: 16),
@@ -247,7 +247,7 @@ class _KursePageState extends State<KursePage> {
                           child: CircularProgressIndicator(
                             strokeWidth: 3.8,
                             valueColor: AlwaysStoppedAnimation<Color>(
-                              Color.fromARGB(255, 89, 154, 228),
+                              Color.fromARGB(255, 88, 137, 255),
                             ),
                           ),
                         ),
@@ -284,7 +284,7 @@ class _KursePageState extends State<KursePage> {
       padding: const EdgeInsets.all(4),
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 89, 154, 228),
+        color: Color.fromARGB(255, 88, 137, 255),
       ),
       child: Padding(
         padding: const EdgeInsets.only(left: 10),

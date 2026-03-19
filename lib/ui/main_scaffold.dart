@@ -65,7 +65,7 @@ class _MainScaffoldState extends State<MainScaffold> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor:  Color.fromARGB(255, 22, 22, 22),
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Color.fromARGB(255, 88, 137, 255),
         unselectedItemColor: Colors.white,
         selectedFontSize: 10,
         unselectedFontSize: 10,

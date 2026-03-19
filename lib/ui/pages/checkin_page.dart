@@ -95,7 +95,7 @@ class _CheckinPageState extends State<CheckinPage> {
                           border: Border(
                             bottom: BorderSide(
                               color: showScan
-                                  ? const Color.fromARGB(255, 52, 135, 229)
+                                  ? const Color.fromARGB(255, 88, 137, 255)
                                   : Colors.transparent,
                               width: 3,
                             ),
@@ -106,7 +106,7 @@ class _CheckinPageState extends State<CheckinPage> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: showScan
-                                ? const Color.fromARGB(255, 52, 135, 229)
+                                ? const Color.fromARGB(255, 88, 137, 255)
                                 : Colors.white,
                             fontWeight: FontWeight.w500,
                             fontSize: 16,
@@ -129,7 +129,7 @@ class _CheckinPageState extends State<CheckinPage> {
                           border: Border(
                             bottom: BorderSide(
                               color: !showScan
-                                  ? const Color.fromARGB(255, 52, 135, 229)
+                                  ? const Color.fromARGB(255, 88, 137, 255)
                                   : Colors.transparent,
                               width: 3,
                             ),
@@ -140,7 +140,7 @@ class _CheckinPageState extends State<CheckinPage> {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: !showScan
-                                ? const Color.fromARGB(255, 52, 135, 229)
+                                ? const Color.fromARGB(255, 88, 137, 255)
                                 : Colors.white,
                             fontWeight: FontWeight.w500,
                             fontSize: 16,
@@ -341,7 +341,7 @@ class _CheckinPageState extends State<CheckinPage> {
             const Text(
               'CODE MANUELL EINGEBEN',
               style: TextStyle(
-                color: const Color.fromARGB(255, 52, 135, 229),
+                color: const Color.fromARGB(255, 88, 137, 255),
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
                 letterSpacing: 0.8,
@@ -364,16 +364,16 @@ class _CheckinPageState extends State<CheckinPage> {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color.fromARGB(0, 254, 252, 252),
-                  foregroundColor: const Color.fromARGB(255, 52, 135, 229),
+                  foregroundColor: const Color.fromARGB(255, 88, 137, 255),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
-                    side: const BorderSide(color: Color.fromARGB(255, 52, 135, 229), width: 2),
+                    side: const BorderSide(color: Color.fromARGB(255, 88, 137, 255), width: 2),
                   ),
                   elevation: 2,
                 ),
                 child: const Text(
                   'Manueller Check-in beim Partner',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600,color: Color.fromARGB(255, 52, 135, 229)),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600,color: Color.fromARGB(255, 88, 137, 255)),
                 ),
               ),
             ),
@@ -386,14 +386,14 @@ class _CheckinPageState extends State<CheckinPage> {
               children: [
                 const Icon(
                   Icons.info_outline,
-                  color: Color.fromARGB(255, 52, 135, 229),
+                  color: Color.fromARGB(255, 88, 137, 255),
                   size: 26,
                 ),
                 const SizedBox(width: 8),
                 const Text(
                   'Wie funktioniert der Check-in?',
                   style: TextStyle(
-                    color: Color.fromARGB(255, 52, 135, 229),
+                    color: Color.fromARGB(255, 88, 137, 255),
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     letterSpacing: 0.2,
@@ -416,7 +416,7 @@ class _CheckinPageState extends State<CheckinPage> {
         const Icon(
           Icons.numbers_rounded,
           size: 80,
-          color: Color.fromARGB(255, 52, 135, 229),
+          color: Color.fromARGB(255, 88, 137, 255),
         ),
         const SizedBox(height: 24),
         const Text(
@@ -461,7 +461,7 @@ class _CheckinPageState extends State<CheckinPage> {
               );
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 52, 135, 229),
+              backgroundColor: const Color.fromARGB(255, 88, 137, 255),
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             ),
