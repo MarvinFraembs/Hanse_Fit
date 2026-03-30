@@ -57,8 +57,8 @@ class _SplashScreenState extends State<SplashScreen> {
             ],
           ),
           Positioned(
-            top: 20,
-            left: 0,
+            top: 10,
+            right: 0,
             child: GestureDetector(
               onTap: () {
                 _navigateToHiddenMenu = true;
@@ -76,8 +76,8 @@ class _SplashScreenState extends State<SplashScreen> {
                 });
               },
               child: Container(
-                width: 60,
-                height: 60,
+                width: 120,
+                height: 120,
                 color: Colors.transparent,
               ),
             ),

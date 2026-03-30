@@ -1,6 +1,7 @@
 // lib/ui/main_scaffold.dart
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'pages/studios_page.dart';
 import 'pages/kurse_page.dart';
 import 'pages/checkin_page.dart';
@@ -39,7 +40,7 @@ class _MainScaffoldState extends State<MainScaffold> {
       tooltip: '',
       icon: Icon(
         outlined,
-        color: Colors.white.withOpacity(0.9),
+        color: Colors.white,
         size: 24,
       ),
       selectedIcon: Icon(
@@ -67,6 +68,8 @@ class _MainScaffoldState extends State<MainScaffold> {
         backgroundColor:  Color.fromARGB(255, 22, 22, 22),
         selectedItemColor: Color.fromARGB(255, 88, 137, 255),
         unselectedItemColor: Colors.white,
+        selectedIconTheme: const IconThemeData(opacity: 1.0),
+        unselectedIconTheme: const IconThemeData(opacity: 1.0),
         selectedFontSize: 10,
         unselectedFontSize: 10,
         currentIndex: _selectedIndex,
@@ -80,24 +83,36 @@ class _MainScaffoldState extends State<MainScaffold> {
           fontWeight: FontWeight.w400,
           letterSpacing: 0.4,
         ),
-        items: const [
-          BottomNavigationBarItem(
+        items: [
+          const BottomNavigationBarItem(
             icon: Icon(Icons.location_on),
             label: "STUDIOS",
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today_outlined),
             label: "KURSE",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.qr_code_scanner_rounded),
+            icon: SvgPicture.asset(
+              'assets/images/Qr-Code-Icon.svg',
+              width: 24,
+              height: 24,
+              //colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/images/Qr-Code-Icon.svg',
+              width: 24,
+              height: 24,
+              // Die Farbe für den ausgewählten Zustand
+              colorFilter: const ColorFilter.mode(Color.fromARGB(255, 88, 137, 255), BlendMode.srcIn),
+            ),
             label: "CHECK-IN",
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.add_circle_outline),
             label: "ONLINE+",
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_outlined),
             label: "PROFIL",
           ),
