@@ -88,8 +88,20 @@ class _MainScaffoldState extends State<MainScaffold> {
             icon: Icon(Icons.location_on),
             label: "STUDIOS",
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today_outlined),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/images/Kalendar_Icon.svg',
+              width: 24,
+              height: 24,
+              //colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/images/Kalendar_Icon.svg',
+              width: 24,
+              height: 24,
+              // Die Farbe für den ausgewählten Zustand
+              colorFilter: const ColorFilter.mode(Color.fromARGB(255, 88, 137, 255), BlendMode.srcIn),
+            ),
             label: "KURSE",
           ),
           BottomNavigationBarItem(
@@ -108,12 +120,36 @@ class _MainScaffoldState extends State<MainScaffold> {
             ),
             label: "CHECK-IN",
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle_outline),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/images/Plus_Icon.svg',
+              width: 24,
+              height: 24,
+              //colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/images/Plus_Icon.svg',
+              width: 24,
+              height: 24,
+              // Die Farbe für den ausgewählten Zustand
+              colorFilter: const ColorFilter.mode(Color.fromARGB(255, 88, 137, 255), BlendMode.srcIn),
+            ),
             label: "ONLINE+",
           ),
-          const BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_outlined),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              'assets/images/Profil_Icon.svg',
+              width: 24,
+              height: 24,
+              //colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            ),
+            activeIcon: SvgPicture.asset(
+              'assets/images/Profil_Icon.svg',
+              width: 24,
+              height: 24,
+              // Die Farbe für den ausgewählten Zustand
+              colorFilter: const ColorFilter.mode(Color.fromARGB(255, 88, 137, 255), BlendMode.srcIn),
+            ),
             label: "PROFIL",
           ),
         ],

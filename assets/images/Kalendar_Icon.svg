@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="Kalendar_Icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="31.28125"
+     inkscape:cx="16"
+     inkscape:cy="15.984016"
+     inkscape:window-width="2560"
+     inkscape:window-height="1300"
+     inkscape:window-x="1920"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:2"
+       id="rect788"
+       width="25.956934"
+       height="25.956934"
+       x="3.0999999"
+       y="3.0999999"
+       rx="1.9914914"
+       ry="1.9914914" />
+    <path
+       style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:1.90242"
+       d="M 2.8240354,9.9776612 29.123947,10.006839"
+       id="path952" />
+    <rect
+       style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:1.35199"
+       id="rect1052"
+       width="0.048006956"
+       height="4.7231717"
+       x="9.5447636"
+       y="0.492901"
+       rx="1.9914916"
+       ry="1.9914913" />
+    <rect
+       style="fill:none;fill-opacity:0;stroke:#ffffff;stroke-width:1.35202"
+       id="rect1052-3"
+       width="0.047975123"
+       height="4.72645"
+       x="21.677774"
+       y="0.50771713"
+       rx="1.9914914"
+       ry="1.9914914" />
+  </g>
+</svg>
