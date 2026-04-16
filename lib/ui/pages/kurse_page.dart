@@ -64,7 +64,7 @@ class _KursePageState extends State<KursePage> {
     ];
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 29, 29, 29),
+      backgroundColor: const Color.fromARGB(255, 29, 29, 34),
       body: SafeArea(
         child: SingleChildScrollView(
           controller: _scrollController,

@@ -70,7 +70,7 @@ class _CheckinPageState extends State<CheckinPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 29, 29, 29),
+      backgroundColor: const Color.fromARGB(255, 29, 29, 34),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -197,7 +197,7 @@ class _CheckinPageState extends State<CheckinPage> {
               width: 400,
               height: 400,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 30, 30, 30),
+                color: const Color.fromARGB(255, 29, 29, 34),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Stack(

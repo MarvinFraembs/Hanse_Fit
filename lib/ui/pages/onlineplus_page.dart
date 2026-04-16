@@ -6,7 +6,7 @@ class OnlineplusPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 29, 29, 29), 
+      backgroundColor: Color.fromARGB(255, 29, 29, 34), 
       body: SingleChildScrollView(
         child: Column(
           children: [

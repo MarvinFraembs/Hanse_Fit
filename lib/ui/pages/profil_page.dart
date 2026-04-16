@@ -48,7 +48,7 @@ Widget _defaultAvatar() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 29, 29, 29),
+      backgroundColor: const Color.fromARGB(255, 29, 29, 34),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

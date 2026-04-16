@@ -23,7 +23,7 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
   final _nameController = TextEditingController();
   final _mitgliedsIdController = TextEditingController();
   final _unternehmenController = TextEditingController();
-  String? _selectedStudio;
+  String? selectedStudio;
 
   String? _profileImagePath;        // ← hier wird der Pfad gespeichert
   final ImagePicker _picker = ImagePicker();
@@ -42,7 +42,7 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
       _unternehmenController.text = prefs.getString('arbeitgeber') ?? '';
       _profileImagePath = prefs.getString('profileImagePath');
       final savedStudio = prefs.getString('studio') ?? '';
-      _selectedStudio = allowedStudios.contains(savedStudio) ? savedStudio : null;
+      selectedStudio = allowedStudios.contains(savedStudio) ? savedStudio : null;
     });
   }
 
@@ -55,8 +55,8 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
     if (_profileImagePath != null) {
       await prefs.setString('profileImagePath', _profileImagePath!);
     }
-    if (_selectedStudio != null) {
-    await prefs.setString('studio', _selectedStudio!);
+    if (selectedStudio != null) {
+    await prefs.setString('studio', selectedStudio!);
     } else {
     await prefs.remove('studio');
     }
@@ -185,7 +185,7 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
             ),
             const SizedBox(height: 16),
             DropdownButtonFormField<String>(
-              value: _selectedStudio,
+              value: selectedStudio,
               style: const TextStyle(color: Colors.white),
               dropdownColor: Colors.grey[900],
               decoration: const InputDecoration(
@@ -207,7 +207,7 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
               }).toList(),
               onChanged: (String? newValue) {
                 setState(() {
-                  _selectedStudio = newValue;
+                  selectedStudio = newValue;
                 });
               },
               hint: const Text('Studio auswählen', style: TextStyle(color: Colors.grey)),
