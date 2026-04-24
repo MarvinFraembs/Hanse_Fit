@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'checkedin.dart';
 
 class CheckinPage extends StatefulWidget {
   const CheckinPage({super.key});
@@ -250,8 +251,7 @@ class _CheckinPageState extends State<CheckinPage> {
                             color: Color.fromARGB(57, 169, 168, 168),
                             width: 4,                               // oder hier die Stärke setzen
                           ),
-                        ),
-                        // color: Colors.transparent,               // nicht nötig – ShapeDecoration hat standardmäßig keinen Fill
+                        ),      // color: Colors.transparent,               // nicht nötig – ShapeDecoration hat standardmäßig keinen Fill
                       ),
                       child: Image.asset(
                         'assets/images/Icon_QR_Code.png',
@@ -276,6 +276,22 @@ class _CheckinPageState extends State<CheckinPage> {
                     ),
                   ),
 
+                  Positioned(
+                    bottom: 20,                  // Abstand von unten – passe nach Wunsch an (16–40)
+                    left: 0,
+                    right: 0,
+                    child: GestureDetector(
+                      onTap: () {
+                        //_navigateToHiddenMenu = true;
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const CheckedIn()),
+                        );
+                      },
+                      child: Container(height: 90, width: 100, color: Colors.transparent),
+                    ),
+                  ),
+              
                   // Roter Rahmen in den Ecken – immer sichtbar
                   ...List.generate(4, (index) {
                     final alignments = [

@@ -5,6 +5,7 @@ const List<String> allowedStudios = [
   'FITNESSLAND Braunschweig Wilhelmstraße',
   'FITNESSLAND Braunschweig Celler Straße',
   'Hygia Braunschweig',
+  'Floßstation - Bootsverleih am Botanischen Garten'
 ];
 
 class AppPreferences {
