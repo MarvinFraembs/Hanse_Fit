@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'checkin_page.dart';
 
 class CheckedIn extends StatefulWidget {
   const CheckedIn({super.key});
@@ -27,32 +28,41 @@ class _CheckedInState extends State<CheckedIn> {
               // Header Bereich
               const Text(
                 'CHECK-IN',
-                style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold, letterSpacing: 1.5),
+                style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold, letterSpacing: 1.0),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 20),
               const Text(
                 'Bitte zeige diesen Screen am Empfang, um Eintritt zu erhalten.',
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white70, fontSize: 14),
+                style: TextStyle(color: Colors.white70, fontSize: 14, letterSpacing: 1.2),
               ),
               const SizedBox(height: 30),
 
               // Haupt-Container
               Container(
                 decoration: BoxDecoration(
-                  color: containerColor,
-                  borderRadius: BorderRadius.circular(20),
+                  color: containerColor, // Die Farbe für den unteren Teil
+                  borderRadius: BorderRadius.circular(8),
                 ),
+                // clipBehavior sorgt dafür, dass die Kinder nicht über die abgerundeten Ecken ragen
+                clipBehavior: Clip.antiAlias, 
                 child: Column(
                   children: [
-                    // Oberer Bereich mit Image
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Align(
-                        alignment: Alignment.topLeft,
-                        child: Image.network(
-                          'https://via.placeholder.com/80', // Hier dein Logo/Bild einfügen
-                          height: 40,
+                    // --- NEUER DUNKLER BEREICH ---
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(vertical: 0), // Padding für oben/unten
+                      decoration: const BoxDecoration(
+                        color: Color.fromARGB(255, 35, 35, 35), // Dein dunklerer Grauton
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: Align(
+                          alignment: Alignment.topLeft,
+                          child: Image.asset(
+                            'assets/images/Checkin_HanseFit.png',
+                            height: 25,
+                          ),
                         ),
                       ),
                     ),
@@ -75,23 +85,17 @@ class _CheckedInState extends State<CheckedIn> {
                       ),
                     ),
 
-                    // Profil Bereich (Zwei Spalten nebeneinander)
+                    // Profil Bereich (Dieser Teil bleibt in 'containerColor')
                     Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Row(
                         children: [
-                          // Linke Column mit Kreis-Bild
-                          Column(
-                            children: [
-                              CircleAvatar(
-                                radius: 45,
-                                backgroundColor: Colors.grey[700],
-                                backgroundImage: const NetworkImage('https://via.placeholder.com/150'), // Profilbild
-                              ),
-                            ],
+                          CircleAvatar(
+                            radius: 45,
+                            backgroundColor: Colors.grey[700],
+                            backgroundImage: const NetworkImage('https://via.placeholder.com/150'),
                           ),
                           const SizedBox(width: 20),
-                          // Rechte Column mit Name und Icon
                           const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -132,7 +136,12 @@ class _CheckedInState extends State<CheckedIn> {
                 width: double.infinity,
                 height: 55,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const CheckinPage()),
+                  );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: buttonColor,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
