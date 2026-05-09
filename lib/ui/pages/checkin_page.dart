@@ -4,7 +4,8 @@ import 'package:permission_handler/permission_handler.dart';
 import 'checkedin.dart';
 
 class CheckinPage extends StatefulWidget {
-  const CheckinPage({super.key});
+  final VoidCallback onCheckInSuccess;
+  const CheckinPage({super.key, required this.onCheckInSuccess});
 
   @override
   State<CheckinPage> createState() => _CheckinPageState();
@@ -283,10 +284,7 @@ class _CheckinPageState extends State<CheckinPage> {
                     child: GestureDetector(
                       onTap: () {
                         //_navigateToHiddenMenu = true;
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const CheckedIn()),
-                        );
+                        widget.onCheckInSuccess();
                       },
                       child: Container(height: 90, width: 100, color: Colors.transparent),
                     ),

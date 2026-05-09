@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'checkin_page.dart';
 
 class CheckedIn extends StatefulWidget {
-  const CheckedIn({super.key});
+  final VoidCallback onCheckOut;
+  const CheckedIn({super.key, required this.onCheckOut});
 
   @override
   State<CheckedIn> createState() => _CheckedInState();
@@ -70,16 +71,30 @@ class _CheckedInState extends State<CheckedIn> {
                     // Grüner Erfolgs-Streifen
                     Container(
                       width: double.infinity,
-                      color: successGreen,
+                      color: Color(0xFFA8E6CF),
                       padding: const EdgeInsets.symmetric(vertical: 8),
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.check_circle, color: Colors.white, size: 20),
-                          SizedBox(width: 8),
                           Text(
-                            'CHECK-IN erfolgreich',
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                            'CHECK-IN ERFOLGREICH',
+                            style: TextStyle(color:Color.fromARGB(255, 50, 50, 50), fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(width: 8),
+                          Icon(
+                            Icons.check_rounded,
+                            color: Color.fromARGB(255,50,50,50), 
+                            size: 16,
+                            shadows: <Shadow>[
+                              Shadow(
+                                offset: Offset(0.2, 0.2),
+                                color: Color.fromARGB(255, 50, 50, 50),
+                              ),
+                              Shadow(
+                                offset: Offset(-0.2, -0.2),
+                                color: Color.fromARGB(255, 50, 50, 50),
+                              ),
+                            ],
                           ),
                         ],
                       ),
@@ -137,10 +152,7 @@ class _CheckedInState extends State<CheckedIn> {
                 height: 55,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const CheckinPage()),
-                  );
+                    widget.onCheckOut();
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: buttonColor,
