@@ -285,6 +285,31 @@ class _CheckInsBuchungenSectionState extends State<CheckInsBuchungenSection> {
     // Liste der Wochentage (Deutsch)
     List<String> weekdays = ['MO.', 'DI.', 'MI.', 'DO.', 'FR.', 'SA.', 'SO.'];
 
+    int wochentag = now.weekday; // 1 = Montag, 7 = Sonntag
+    int tagImMonat = now.day; // 1-31
+
+    int checkinsthisweek = 0;
+    int checkinsthismonth = 0;
+
+    if (wochentag == DateTime.monday || wochentag == DateTime.tuesday) {
+      checkinsthisweek = 1;
+    } else if (wochentag == DateTime.wednesday || wochentag == DateTime.thursday || wochentag == DateTime.friday) {
+      checkinsthisweek = 2;
+    } else if (wochentag == DateTime.saturday || wochentag == DateTime.sunday) {
+      checkinsthisweek = 3;
+    }
+
+    // --- LOGIK FÜR DEN MONAT ---
+    // Wenn heute der 1. Tag des Monats ist, wird der Zähler zurückgesetzt
+    if (tagImMonat == 1) {
+      checkinsthismonth = 1;
+    } else {
+      // Wenn nicht der erste Tag ist, erhöht sich der Monatszähler 
+      // um den aktuellen Wert der Woche
+      checkinsthismonth += checkinsthisweek;
+    }
+
+
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -410,9 +435,9 @@ class _CheckInsBuchungenSectionState extends State<CheckInsBuchungenSection> {
                               width: 1.0, // Dicke der Linie
                             ),
                           ),
-                          child: const Center(
+                          child: Center(
                             child: Text(
-                              '1',
+                              '$checkinsthismonth',
                               style: TextStyle(
                                 color:Color.fromARGB(255, 88, 137, 255),
                                 fontSize: 24,
@@ -432,9 +457,9 @@ class _CheckInsBuchungenSectionState extends State<CheckInsBuchungenSection> {
                       color: const Color.fromARGB(255, 50, 50, 50),
                       borderRadius: BorderRadius.circular(8),
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Text(
-                        'CHECK-INS IN DIESER WOCHE: 1',
+                        'CHECK-INS IN DIESER WOCHE: $checkinsthisweek',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 12,
