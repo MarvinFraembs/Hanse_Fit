@@ -24,9 +24,9 @@ class StudiosPage extends StatelessWidget {
     if (studioName == 'FITNESSLAND Braunschweig Rebenpark') {
       return Column(
         children: [
-          Image.asset('assets/images/rebenpark_1.png'),
-          const SizedBox(height: 10),
-          Image.asset('assets/images/rebenpark_2.png'),
+          Image.asset('assets/images/RR1.png'),
+          Image.asset('assets/images/RR2.png'),
+          Image.asset('assets/images/RR3.png'),
         ],
       );
     } else if (studioName == 'FITNESSLAND Braunschweig Wilhelmstraße') {
@@ -39,10 +39,21 @@ class StudiosPage extends StatelessWidget {
           Image.asset('assets/images/WS5.png'),
         ],
       );
+    } else if (studioName == 'FITNESSLAND Braunschweig Celler Straße') {
+      return Column(
+        children: [
+          Image.asset('assets/images/CS1.png'),
+          Image.asset('assets/images/CS2.png'),
+          Image.asset('assets/images/CS3.png'),
+          Image.asset('assets/images/CS4.png'),
+          Image.asset('assets/images/CS5.png'),
+        ],
+      );
+    } else if (studioName == 'Floßstation - Bootsverleih am Botanischen Garten') {
+      return Image.asset('assets/images/floßstation_1.png');
     } else if (studioName == 'Hygia Braunschweig') {
       return Image.asset('assets/images/hygia_1.png');
-    } 
-    
+    }
     return const Center(
       child: Text("Keine Bilder für dieses Studio gefunden.", 
         style: TextStyle(color: Colors.white70)),
@@ -67,6 +78,8 @@ class StudiosPage extends StatelessWidget {
                   'assets/images/Studios_Map2.png',
                   fit: BoxFit.fill,
                   width: double.infinity,
+                  //color: Colors.white.withOpacity(0.3),
+                  colorBlendMode: BlendMode.srcATop,
                 ),
               ),
               Positioned.fill(

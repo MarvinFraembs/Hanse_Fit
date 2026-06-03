@@ -186,6 +186,7 @@ class _HiddenMenuPageState extends State<HiddenMenuPage> {
             ),
             const SizedBox(height: 16),
             DropdownButtonFormField<String>(
+              isExpanded: true,
               value: selectedStudio,
               style: const TextStyle(color: Colors.white),
               dropdownColor: Colors.grey[900],
