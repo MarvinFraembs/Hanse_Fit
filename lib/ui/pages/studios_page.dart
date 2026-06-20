@@ -90,11 +90,11 @@ class StudiosPage extends StatelessWidget {
 
               // SearchBar Bereich
               Positioned(
-                top: 60.5,
-                left: 11.5,
-                right: 65,
+                top: 70.5,
+                left: 12.5,
+                right: 72,
                 child: Container(
-                  height: 40,
+                  height: 52,
                   child: SearchBar(
                     hintText: 'Partner finden',
                     leading: const Padding(

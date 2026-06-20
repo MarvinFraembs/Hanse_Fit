@@ -111,11 +111,12 @@ class _CheckedInState extends State<CheckedIn> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Header Bereich
+              const SizedBox(height: 40),
               const Text(
                 'CHECK-IN',
-                style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold, letterSpacing: 1.0),
+                style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.bold, letterSpacing: 0.9),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               const Text(
                 'Bitte zeige diesen Screen am Empfang, um Eintritt zu erhalten.',
                 textAlign: TextAlign.center,
@@ -179,7 +180,7 @@ class _CheckedInState extends State<CheckedIn> {
                       child: Row(
                         children: [
                           CircleAvatar(
-                            radius: 45,
+                            radius: 55,
                             backgroundColor: Colors.grey[700],
                             backgroundImage: _profileImagePath != null
                               ? FileImage(File(_profileImagePath!)) // Das '!' sagt Flutter: "Ich garantiere, es ist nicht null"

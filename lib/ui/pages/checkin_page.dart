@@ -358,7 +358,7 @@ class _CheckinPageState extends State<CheckinPage> {
                 color: const Color.fromARGB(255, 88, 137, 255),
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                letterSpacing: 0.8,
+                letterSpacing: 0.6,
               ),
             ),
 
@@ -366,7 +366,7 @@ class _CheckinPageState extends State<CheckinPage> {
 
             // Button "Manueller Check-in beim Partner" – immer sichtbar
             SizedBox(
-              width: 300,
+              width: 320,
               height: 56,
               child: ElevatedButton(
                 onPressed: () {
